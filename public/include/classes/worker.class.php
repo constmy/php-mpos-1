@@ -250,6 +250,34 @@ class Worker extends Base {
   }
 
   /**
+   * Add multiworker
+   *
+   **/
+  public function addMultiWorkers($account_id, $prefix, $workerPassword, $start, $end) {
+  	$start = (int) $start;
+  	$end = (int) $end;
+  	if($start == $end) {
+  		return $this->addWorker($account_id, $prefix.$start, $workerPassword);
+  	}
+  	 
+  	if($start > $end) {
+  		$tmp = $start;
+  		$start = $end;
+  		$end = $tmp;
+  	}
+  
+  	if( ($end-$start) > 200 ) {
+  		return $this->sqlError('E0060');
+  	}
+  
+  	for($i=$start; $i<=$end; $i++) {
+  		if(!$this->addWorker($account_id, $prefix.$i, $workerPassword))
+  			return false;
+  	}
+  	return true;
+  }
+  
+  /**
    * Delete existing worker from account
    * @param account_id int User ID
    * @param id int Worker ID

@@ -27,6 +27,15 @@ if ($user->isAuthenticated()) {
     }
     break;
 
+  case 'addMulti':
+  	if ($worker->addMultiWorkers($_SESSION['USERDATA']['id'],$_POST['prefix'], $_POST['password'], $_POST['start'], $_POST['end'])) {
+  		$_SESSION['POPUP'][] = array('CONTENT' => 'Worker added');
+    } else {
+    	$_SESSION['POPUP'][] = array('CONTENT' => $worker->getError(), 'TYPE' => 'errormsg');
+    }
+    break;
+    
+    
   case 'update':
     if (!$config['csrf']['enabled'] || $config['csrf']['enabled'] && $csrftoken->valid) {
       if ($worker->updateWorkers($_SESSION['USERDATA']['id'], @$_POST['data'])) {

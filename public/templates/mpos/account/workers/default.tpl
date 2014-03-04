@@ -77,3 +77,38 @@
     </footer>
   </form>
 </article>
+
+{if $SHOW_ADD_ALL}
+<article class="module width_quarter">
+  <header><h3 class="">Multi Add New Worker</h3></header>
+  <form action="{$smarty.server.PHP_SELF}" method="post">
+    <input type="hidden" name="page" value="{$smarty.request.page|escape}">
+    <input type="hidden" name="action" value="{$smarty.request.action|escape}">
+    <input type="hidden" name="do" value="addMulti">
+    <div class="module_content">
+      <fieldset>
+        <label>prefix</label>
+        <input type="text" name="prefix" value="" size="10" maxlength="20" required>
+      </fieldset>
+      <fieldset>
+        <label>password</label>
+        <input type="text" name="password" value="" size="10" maxlength="20" required>&nbsp;
+      </fieldset>
+      <fieldset>
+        <label>start_id</label>
+        <input type="text" name="start" value="" size="10" maxlength="20" required>&nbsp;
+      </fieldset>
+      <fieldset>
+        <label>end_id</label>
+        <input type="text" name="end" value="" size="10" maxlength="20" required>&nbsp;
+      </fieldset>
+      <div class="clear"></div>
+    </div>
+    <footer>
+      <div class="submit_link">
+        <input type="submit" value="Multi Add New Worker" class="alt_btn">
+      </div>
+    </footer>
+  </form>
+</article>
+{/if}

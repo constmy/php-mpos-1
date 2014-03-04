@@ -60,6 +60,13 @@ $aSettings['website'][] = array(
   'name' => 'website_mobile_theme', 'value' => $setting->getValue('website_mobile_theme'),
   'tooltip' => 'The mobile theme used for your pool.'
 );
+$aSettings['website'][] = array(
+   'display' => '是否显示批量添加用户', 'type' => 'select',
+   'options' => array(0, 1),
+   'default' => 0,
+   'name' => 'show_add_multi', 'value' => $setting->getValue('show_add_multi'),
+   'tooltip' => '批量添加矿工帐号'
+ );
 $aSettings['blockchain'][] = array(
   'display' => 'Disable Blockexplorer', 'type' => 'select',
   'options' => array( 0 => 'No', 1 => 'Yes' ),
