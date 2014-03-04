@@ -5,6 +5,8 @@ $defflip = (!cfip()) ? exit(header('HTTP/1.1 401 Unauthorized')) : 1;
 // SHA/Scrypt check
 if (empty($config['algorithm']) || $config['algorithm'] == 'scrypt') {
   $config['target_bits'] = 16;
+} elseif($config['algorithm'] == 'max') {
+  $config['target_bits'] = 20;
 } else {
   $config['target_bits'] = 32;
 }
