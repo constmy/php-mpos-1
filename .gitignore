@@ -9,6 +9,9 @@
 /public/templates/cache/**
 
 # Logs
+/cronjobs/mytask/mytask.pid
+/cronjobs/mytask/mytask.log
+/cronjobs/mytask/nohup.out
 /cronjobs/logs
 /cronjobs/logs/**.txt.*.gz
 /logs/*
