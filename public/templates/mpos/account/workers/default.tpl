@@ -78,7 +78,7 @@
   </form>
 </article>
 
-{if $SHOW_ADD_ALL}
+{if $SHOW_ADD_MULTI}
 <article class="module width_quarter">
   <header><h3 class="">Multi Add New Worker</h3></header>
   <form action="{$smarty.server.PHP_SELF}" method="post">

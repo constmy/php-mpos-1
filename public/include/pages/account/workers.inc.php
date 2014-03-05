@@ -54,6 +54,8 @@ if ($user->isAuthenticated()) {
 
   $smarty->assign('WORKERS', $aWorkers);
 }
+
+$smarty->assign('SHOW_ADD_MULTI', $setting->getValue('show_add_multi'));
 $smarty->assign('CONTENT', 'default.tpl');
 
 ?>
