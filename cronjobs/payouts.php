@@ -50,7 +50,7 @@ $aBlocksUnconfirmed = $block->getAllUnconfirmed($confirmations);
 $dBlocksUnconfirmedBalance = 0;
   if (!empty($aBlocksUnconfirmed))foreach ($aBlocksUnconfirmed as $aData) $dBlocksUnconfirmedBalance += $aData['amount'];
 
-$dWalletBalance -= $dBlocksUnconfirmedBalance;
+//$dWalletBalance -= $dBlocksUnconfirmedBalance;
 
 // Fetch Newmint
 $aGetInfo = $bitcoin->getinfo();
@@ -137,7 +137,7 @@ $aBlocksUnconfirmed = $block->getAllUnconfirmed($confirmations);
 $dBlocksUnconfirmedBalance = 0;
   if (!empty($aBlocksUnconfirmed))foreach ($aBlocksUnconfirmed as $aData) $dBlocksUnconfirmedBalance += $aData['amount'];
 
-$dWalletBalance -= $dBlocksUnconfirmedBalance;
+//$dWalletBalance -= $dBlocksUnconfirmedBalance;
 
 // Fetch Newmint
 $aGetInfo = $bitcoin->getinfo();
